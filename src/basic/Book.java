@@ -4,13 +4,13 @@ public class Book {
 
 	private String title;
 	private String name;
-	private String prices;
+	private String price;
 
 
 
-	public Book(String title, String  prices, String name) {
+	public Book(String title, String  price, String name) {
 		this.title =title;
-		this.prices = prices;
+		this.price = price;
 		this.name = name;
 	}
 
@@ -25,12 +25,12 @@ public class Book {
 	}
 
 
-	public String getPrices() {
-		return prices;
+	public String getPrice() {
+		return price;
 	}
 
-	public void setPrices(String prices) {
-		this.prices = prices;
+	public void setPrices(String price) {
+		this.price = price;
 	}
 
 	public String getName() {
