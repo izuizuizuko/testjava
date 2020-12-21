@@ -2,12 +2,11 @@ package basic;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class BookShelf {
 
 	private ArrayList<Book> addbook;
 	private Book book;
-	
+
 	private Book title;
 	private Book name;
 	private Book price;
@@ -33,7 +32,7 @@ public class BookShelf {
 		String s = scy.nextLine();
 		if (s.equals("yes")) {
 			System.out.println("新しい本を追加します。");
-	
+
 		} else {
 			System.out.println("おわり");
 
@@ -56,34 +55,36 @@ public class BookShelf {
 		System.out.println("登録に成功しました");
 		//取得したタイトル等をブックのインスタンスに入れて、それをaddする。
 		Book book = new Book(title, price, name);
+		addbook.add(book);
 		System.out.println("繰り返し、書籍を追加しますか？[はい: yes いいえ: no]");
-		System.out.println(book.getTitle() +book.getPrice() + book.getName());
+
+
 	}
-	
-	
-	
+
+
+
 	public Book getPrice() {
 		return price;
 	}
-	
+
 	public void setPrice(Book price) {
 		this. price =  price;
 	}
 
-	
+
 	public Book getName() {
 		return name;
 	}
-	
+
 	public void setName(Book name) {
 		this.name = name;
 	}
-	
-	
+
+
 	public Book getTitle() {
 		return title;
 	}
-	
+
 	public void setTitle(Book title) {
 		this.title = title;
 	}
@@ -91,16 +92,18 @@ public class BookShelf {
 	public Book getBook() {
 		return book;
 	}
-	
+
 	public void setBook(Book book) {
 		this.book = book;
 	}
 
 	public void bookshelfdetail() {
-		System.out.println("aaaa!");
-		System.out.println(this.book.getTitle());
-	
+		System.out.println("現在所持している本一覧=========");
+		for (Book b : addbook) {
+			System.out.println(b);
+		}
+		System.out.println("============================");
+
 	}
-//	
-	
+
 }

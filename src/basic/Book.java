@@ -8,11 +8,12 @@ public class Book {
 
 
 
-	public Book(String title, String  price, String name) {
+	public Book(String title, String price, String name) {
 		this.title =title;
 		this.price = price;
 		this.name = name;
 	}
+
 
 
 
@@ -41,4 +42,8 @@ public class Book {
 		this.name = name;
 	}
 
+	public String toString() {
+	    return "書名：" + getTitle() + "/価格："  + getPrice() + " 円/著者名：" + getName();
+	 
+	}
 }
