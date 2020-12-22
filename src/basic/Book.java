@@ -44,6 +44,6 @@ public class Book {
 
 	public String toString() {
 	    return "書名：" + getTitle() + "/価格："  + getPrice() + " 円/著者名：" + getName();
-	 
+
 	}
 }

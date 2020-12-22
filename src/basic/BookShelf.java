@@ -27,17 +27,6 @@ public class BookShelf {
 
 	}
 
-	public void yesno() {
-		Scanner scy = new Scanner(System.in);
-		String s = scy.nextLine();
-		if (s.equals("yes")) {
-			System.out.println("新しい本を追加します。");
-
-		} else {
-			System.out.println("おわり");
-
-		}
-	}
 
 	public void add() {
 
