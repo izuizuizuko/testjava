@@ -1,7 +1,7 @@
 package basic;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 public class BookShelf {
 
 	private ArrayList<Book> addbook;
@@ -10,12 +10,9 @@ public class BookShelf {
 	private Book title;
 	private Book name;
 	private Book price;
-
+	public static final int MAXSIZE = 5;
 
 	public BookShelf() {
-
-		System.out.println("現在所持している本一覧========");
-		System.out.println("所有している本はありません。\n");
 
 		addbook = new ArrayList<Book>();
 
@@ -27,39 +24,65 @@ public class BookShelf {
 
 	}
 
+	public void add(Book book) {
 
-	public void add() {
+		if (checkexists(book)) {
+			System.out.println("同じ書籍があるので追加されませんでした");
+		} else {
+			addbook.add(book);
+			System.out.println("登録に成功しました");
+		}
 
-		System.out.println("書籍名を入力してください。");
-		Scanner sc = new Scanner(System.in);
-		String title = sc.next();
-		System.out.println(">" + title);
-		System.out.println("価格を入力してください。");
-		String price = sc.next();
-		System.out.println(">" + price);
-		System.out.println("著者名を入力してください。");
-		String name = sc.next();
-		System.out.println(">" + name);
-		System.out.println("書名：" + title + "/価格：" + price + "円/著者名：" + name + "を追加します。");
-		System.out.println("登録に成功しました");
-		//取得したタイトル等をブックのインスタンスに入れて、それをaddする。
-		Book book = new Book(title, price, name);
-		addbook.add(book);
-		System.out.println("繰り返し、書籍を追加しますか？[はい: yes いいえ: no]");
+
+
 
 
 	}
+	public void bookshelfdetail() {
+		System.out.println("現在所持している本一覧=========");
+		for (Book b : addbook) {
+			System.out.println(b);
+		}
+		if(addbook.size() == 0) {
+			System.out.println("所有している本はありません。\n");
+		}
+		System.out.println("============================");
+	}
 
 
+	public boolean checkexists(Book book) {
+		for(Book b : addbook) {
+			if(book.equals(b)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int getremaing(){
+		return MAXSIZE - addbook.size();
+	}
+
+//	public void booksall() {
+//
+//		if (getTitle().equals(book.getTitle())) {
+//			System.out.println("同じ書籍があるので、追加されませんでした。");
+//
+//		} else {
+//			System.out.println("おわり");
+//		}
+//
+//
+//
+//	}
 
 	public Book getPrice() {
 		return price;
 	}
 
 	public void setPrice(Book price) {
-		this. price =  price;
+		this.price = price;
 	}
-
 
 	public Book getName() {
 		return name;
@@ -68,7 +91,6 @@ public class BookShelf {
 	public void setName(Book name) {
 		this.name = name;
 	}
-
 
 	public Book getTitle() {
 		return title;
@@ -86,13 +108,6 @@ public class BookShelf {
 		this.book = book;
 	}
 
-	public void bookshelfdetail() {
-		System.out.println("現在所持している本一覧=========");
-		for (Book b : addbook) {
-			System.out.println(b);
-		}
-		System.out.println("============================");
 
-	}
 
 }
